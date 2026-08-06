@@ -1,5 +1,11 @@
-const Home = () => {
-  return <div className="">Home</div>;
+import Hero from "@/components/sections/Hero";
+
+const HomePage = () => {
+  return (
+    <>
+      <Hero />
+    </>
+  );
 };
 
-export default Home;
+export default HomePage;

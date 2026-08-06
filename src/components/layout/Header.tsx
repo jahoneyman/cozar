@@ -35,9 +35,11 @@ const navItems: NavItem[] = [
   },
 ];
 
-const Header = () => {
+const Header = ({ className = "" }: { className?: string }) => {
   return (
-    <header className={clsx("p-10 w-full flex justify-between items-center")}>
+    <header
+      className={clsx("w-full flex justify-between items-center", className)}
+    >
       <CozarLogo priority />
       <NavigationItems data={navItems} />
     </header>
@@ -47,11 +49,14 @@ const Header = () => {
 const NavigationItems = ({ data }: { data: NavItem[] }) => {
   return (
     <nav>
-      <ul className="flex">
+      <ul className="flex text-body-md">
         {data.map(({ text, href }) => {
           return (
             <li key={href}>
-              <Link href={href} className="p-2">
+              <Link
+                href={href}
+                className="p-2 hover:text-primary-200 transition-colors"
+              >
                 {text}
               </Link>
             </li>

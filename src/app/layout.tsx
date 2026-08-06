@@ -2,7 +2,6 @@ import { Montserrat, Inter } from "next/font/google";
 
 import { ReactNode } from "react";
 import "./globals.css";
-import Header from "@/components/layout/Header";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -24,8 +23,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
       <body>
-        <Header />
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );

@@ -53,6 +53,7 @@
   --color-neutral-dark: #2a2723;
   --color-neutral-gray: #746f68;
   --color-neutral-light: #d7d2ca;
+  --color-neutral-offwhite: #fcfaf6;
   --color-neutral-white: #fffdfa;
 
   --font-display: var(--font-montserrat);
@@ -124,6 +125,17 @@
   --text-body-sm--font-weight: 400;
 }
 
-* {
-  list-style-type: none;
+@layer base {
+  body {
+    background-color: var(--color-neutral-black);
+    color: var(--color-neutral-white);
+    font-family: var(--font-sans);
+  }
+
+  button {
+    appearance: none;
+    background: none;
+    box-shadow: none;
+    cursor: pointer;
+  }
 }
