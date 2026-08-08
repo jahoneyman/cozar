@@ -8,6 +8,7 @@ interface ButtonProps {
   disabled?: boolean;
   icon?: ReactNode;
   onClick?: () => void;
+  className?: string;
 }
 
 const Button = ({
@@ -17,6 +18,7 @@ const Button = ({
   disabled = false,
   icon,
   onClick,
+  className,
 }: ButtonProps) => {
   const btnColor = {
     primary: "bg-primary-400 text-neutral-white hover:bg-primary-500",
@@ -33,16 +35,17 @@ const Button = ({
   return (
     <button
       className={clsx(
-        "flex items-center gap-2 px-6 py-4 text-body-md font-semibold transition-colors",
+        "flex items-center gap-2 px-6 py-4 font-display font-semibold text-[18px] leading-6 transition-colors",
         variant === "filled" && btnColor[color],
-        variant === "outlined" && "border-2 " + outlineColor[color],
+        variant === "outlined" && "border " + outlineColor[color],
         disabled &&
           "bg-neutral-light text-neutral-gray cursor-not-allowed pointer-events-none",
+        className,
       )}
       onClick={onClick}
     >
       <span>{label}</span>
-      <span>{icon}</span>
+      {icon && <span>{icon}</span>}
     </button>
   );
 };
