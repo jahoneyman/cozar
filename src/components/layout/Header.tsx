@@ -118,7 +118,7 @@ const MobileNavigationItems = ({
           icon={<Menu />}
           onClick={handleIsOpen}
           ariaLabel="Open menu"
-          className="hover:text-primary-400 transition-colors cursor-pointer"
+          className="lg:hidden hover:text-primary-400 transition-colors cursor-pointer"
         />
       )}
       <div
